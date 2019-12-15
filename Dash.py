@@ -1,6 +1,6 @@
 from tkinter import *
 import os
-#from tkinter import messagebox
+from tkinter import messagebox
 root = Tk()
 root.iconbitmap("LOL.ico")
 
@@ -35,6 +35,9 @@ def savef():
     s = entr.get(1.0, END)
     svf.write(s)
 
+def inf():
+    messagebox.showinfo("About IDLE", "Version: v1.0\nLicense: GPL3\nEmail: titan1234eti@gmail.com")
+
 
 flmn = Menu()
 flmn.add_command(label="New", command=newf)
@@ -45,7 +48,7 @@ flmn.add_command(label="Exit", command=ext)
 
 menum = Menu()
 menum.add_cascade(label="File", menu=flmn)
-menum.add_cascade(label="Info")
+menum.add_cascade(label="Info", command=inf)
 
 root.config(menu=menum, bg="#000000")
 
